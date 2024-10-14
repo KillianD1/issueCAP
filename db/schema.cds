@@ -9,7 +9,7 @@ entity Products            as
             CreationDate,
             CreatedByUser,
             to_Description : Association to many ProductDescriptions on to_Description.Product  = $self.Product
-                             and                                        to_Description.Language = $user.locale
+                             and                                        to_Description.Language = 'EN'
     }
 
 entity ProductDescriptions as

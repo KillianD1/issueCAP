@@ -11,6 +11,6 @@ service TestService {
     @readonly
     entity ProductDescriptions as projection on component.ProductDescriptions
                                   where
-                                      Language = $user.locale;
+                                      Language = 'EN';
 
 }
