@@ -260,7 +260,8 @@ entity Product.A_Product {
   @sap.quickinfo : 'Unit of Measure for Maximum Packing Length/Width/Height'
   @sap.semantics : 'unit-of-measure'
   UnitForMaxPackagingDimensions : String(3);
-  to_Description : Association to many Product.A_ProductDescription {  };
+  to_Description : Association to many Product.A_ProductDescription on to_Description.Product  = $self.Product
+                             and                                        to_Description.Language = 'EN';
   to_Plant : Association to many Product.A_ProductPlant {  };
   to_ProductBasicText : Association to many Product.A_ProductBasicText {  };
   to_ProductInspectionText : Association to many Product.A_ProductInspectionText {  };
